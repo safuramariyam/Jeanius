@@ -8,6 +8,8 @@
      <link rel="stylesheet" href="style.css">
      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <!-- Swiper CSS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
           <script>
                document.addEventListener('DOMContentLoaded', function() {
                const mobile = document.getElementById('mobile');
@@ -17,8 +19,55 @@
                     navbar.classList.toggle('active');
                });
                });
-          </script>
-     
+               
+
+
+  const banners = [
+    {
+      image: 'background3.jpg',
+      bimage: 'images/model.png',
+      subtitle: 'Trade-in-offer',
+      heading: 'Super value deals',
+      highlight: 'On all products',
+      description: 'Save more with coupons & up to 70% off!'
+    },
+    {
+      image: 'background4.jpg',
+      bimage:'images/hero3-removebg-preview.png',
+      subtitle: 'New Arrivals',
+      heading: 'Stylish Collection',
+      highlight: 'Men & Women',
+      description: 'Trendy fashion now available at great prices!'
+    },
+    {
+      image: 'background1.jpg',
+      bimage: 'images/hero2-removebg-preview.png',
+      subtitle: 'Limited Time',
+      heading: 'Festival Offer',
+      highlight: 'Up to 80% Off',
+      description: 'Exclusive deals only for this week!'
+    }
+  ];
+
+  let currentBanner = 0;
+
+  function updateHeroBanner() {
+    const banner = banners[currentBanner];
+    document.getElementById('hero').style.backgroundImage = `url('${banner.image}')`;
+     const heroImg = document.getElementById('hero-image');
+  if (heroImg && banner.bimage) {
+    heroImg.src = banner.bimage;
+  }
+    document.getElementById('hero-subtitle').textContent = banner.subtitle;
+    document.getElementById('hero-heading').textContent = banner.heading;
+    document.getElementById('hero-highlight').textContent = banner.highlight;
+    document.getElementById('hero-description').textContent = banner.description;
+
+    currentBanner = (currentBanner + 1) % banners.length;
+  }
+
+  setInterval(updateHeroBanner, 4000);
+</script>
      </head>
 
      <body>
@@ -41,15 +90,189 @@
              </section>
              
 
-     <section id="hero">
-     <div class="hero-text">
-          <h4>Trade-in Offer</h4>
-          <h2>Elevate your style</h2>
-          <h1>with Premium Men's Clothing</h1>
-          <p>save more with coupons and upto 70% discounts</p>
+   <section id="hero" style="background-size: cover; background-position: center; padding: 4rem 2rem;">
+  <div class="hero-content" style="display:flex; align-items: center; justify-content: space-between;" >
+       <div class="hero-text" style="max-width: 50%;">
+      <h4 id="hero-subtitle">Trade-in-offer</h4>
+      <h2 id="hero-heading">Super value deals</h2>
+      <h1 id="hero-highlight">On all products</h1>
+      <p id="hero-description">Save more with coupons & up to 70% off!</p>
+      <button>Shop Now</button>
+    </div>
+     <div class="hero-image-wrapper" style=" max-width: 50%; display: flex; justify-items: flex-end;">
+      <img src="images/model.png" id="hero-image" alt="Product Image"
+           style="max-width: 100%; height: 600px; object-fit: contain;" />
+    </div>
+
+  </div>
+</section>
+     <section id="product1"  class="section-p1">
+          <h2>Featured Products</h2>
+          <p>Casual Fits</p>
           
-          </div>
-          <img src="model.png" alt="Model">
+          <div class="pro-container">
+               <a href="product1.html">
+               <div class="pro">
+                    <img src="Ts copy.jpg" alt="">
+                    <div class="desc">
+                         <span>Jeanius</span>
+                         <h5>T-shirts</h5>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         
+                  
+                    </div>
+                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
+               </div>
+     
+          </a>
+          <a href="product2.html">
+               <div class="pro">
+                    <img src="pants.jpg" alt="">
+                    <div class="desc">
+                         <span>Jeanius</span>
+                         <h5>Pants</h5>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                        
+                    
+                    </div>
+                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
+               </div>
+               </a>
+          
+          <a href="product3.html">
+               <div class="pro">
+                    <img src="shirtss.jpg" alt="">
+                    <div class="desc">
+                         <span>Jeanius</span>
+                         <h5>Checked Shirts</h5>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                      
+                         
+                    </div>
+                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
+               </div>
+               </a>
+          
+     <a href="product4.html">
+               <div class="pro">
+                    <img src="nights.jpg" alt="">
+                    <div class="desc">
+                         <span>Jeanius</span>
+                         <h5>Cargo Pants</h5>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                     
+                       
+                    </div>
+                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
+               </div>
+               </a>
+     </section>
+     <section id="product1"  class="section-p1">
+          <p>Formal Fits</p>
+          <div class="pro-container">
+               <a href="product5.html">
+               <div class="pro">
+                    <img src="formals.jpg" alt="">
+                    <div class="desc">
+                         <span>Jeanius</span>
+                         <h5>Formal Pants</h5>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                     
+                         
+                    </div>
+                    <!-- <a href="#" id="cart-icon"> <i class="fal fa-shopping-cart cart"></i></a> -->
+               </div>
+          </a>
+              
+<a href="product6.html">
+     
+               <div class="pro">
+                    <img src="formalshirts.jpg" alt="">
+                    <div class="desc">
+                         <span>Jeanius</span>
+                         <h5>Formal Shirts</h5>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                        
+                   
+                    </div>
+                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
+               </div>
+               </a>
+          
+          <a href="product7.html">
+               <div class="pro">
+                    <img src="gentlemen.jpg" alt="">
+                    <div class="desc">
+                         <span>Jeanius</span>
+                         <h5>Trousers</h5>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                       
+                   
+                    </div>
+                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
+               </div>
+          
+     </a>
+     <a href="product8.html">
+               <div class="pro">
+                    <img src="dots.jpg" alt="">
+                    <div class="desc">
+                         <span>Jeanius</span>
+                         <h5>Printed Shirts</h5>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                      
+                    </div>
+                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
+               </div>
+               </a>
      </section>
 
      <section id="banners">
@@ -109,165 +332,6 @@
                </div>
                </div>
           </section>
-          
-
-     <section id="product1"  class="section-p1">
-          <h2>Featured Products</h2>
-          <p>Casual Fits</p>
-          <div class="pro-container">
-               <div class="pro">
-                    <img src="Ts copy.jpg" alt="">
-                    <div class="desc">
-                         <span>Jeanius</span>
-                         <h5>T-shirts</h5>
-                         <div class="star">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                         </div>
-                         
-                  
-                    </div>
-                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
-               </div>
-     
-     
-               <div class="pro">
-                    <img src="pants.jpg" alt="">
-                    <div class="desc">
-                         <span>Jeanius</span>
-                         <h5>Pants</h5>
-                         <div class="star">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                         </div>
-                        
-                    
-                    </div>
-                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
-               </div>
-          
-          
-               <div class="pro">
-                    <img src="shirtss.jpg" alt="">
-                    <div class="desc">
-                         <span>Jeanius</span>
-                         <h5>Checked Shirts</h5>
-                         <div class="star">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                         </div>
-                      
-                         
-                    </div>
-                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
-               </div>
-          
-     
-               <div class="pro">
-                    <img src="nights.jpg" alt="">
-                    <div class="desc">
-                         <span>Jeanius</span>
-                         <h5>Cargo Pants</h5>
-                         <div class="star">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                         </div>
-                     
-                       
-                    </div>
-                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
-               </div>
-     </section>
-     <section id="product1"  class="section-p1">
-          <p>Formal Fits</p>
-          <div class="pro-container">
-               <div class="pro">
-                    <img src="formals.jpg" alt="">
-                    <div class="desc">
-                         <span>Jeanius</span>
-                         <h5>Formal Pants</h5>
-                         <div class="star">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                         </div>
-                     
-                         
-                    </div>
-                    <!-- <a href="#" id="cart-icon"> <i class="fal fa-shopping-cart cart"></i></a> -->
-               </div>
-              
-
-     
-               <div class="pro">
-                    <img src="formalshirts.jpg" alt="">
-                    <div class="desc">
-                         <span>Jeanius</span>
-                         <h5>Formal Shirts</h5>
-                         <div class="star">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                         </div>
-                        
-                   
-                    </div>
-                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
-               </div>
-          
-          
-               <div class="pro">
-                    <img src="gentlemen.jpg" alt="">
-                    <div class="desc">
-                         <span>Jeanius</span>
-                         <h5>Trousers</h5>
-                         <div class="star">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                         </div>
-                       
-                   
-                    </div>
-                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
-               </div>
-          
-     
-               <div class="pro">
-                    <img src="dots.jpg" alt="">
-                    <div class="desc">
-                         <span>Jeanius</span>
-                         <h5>Printed Shirts</h5>
-                         <div class="star">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                         </div>
-                      
-                    </div>
-                    <!-- <a href="#"><i class="fal fa-shopping-cart cart"></i></a> -->
-               </div>
-     </section>
 
 
 
