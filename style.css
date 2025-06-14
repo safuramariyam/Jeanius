@@ -262,10 +262,11 @@ nav {
     #product1 .pro-container{
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content:space-evenly;
         padding-top: 20px;
-        flex-wrap: wrap;
-        gap: 30px;
+        flex-wrap:wrap;
+        gap: 5px;
+        /* overflow-x: auto; */
         opacity: 0; 
     transform: translateY(20px); 
     animation: fadeInUp 1s ease-in-out forwards; 
@@ -284,12 +285,14 @@ nav {
     
 
     #product1 .pro {
-        width: 23%;
+        width: 300px;
+        
+        gap: 1rem;
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        min-width: 250px;
-        padding: 10px ;
+        min-width: 330px;
+        padding: 20px ;
         border: 1px solid #a9a3a3;
         cursor: pointer;
         position: relative;
@@ -304,20 +307,11 @@ nav {
         box-shadow: 20px 20px 30px rgba(30, 28, 28, 0.2);
         transform: translateY(-5px) scale(1.03);
     }
-    #product1 button{
-            background-color: #e74c3c;
-            padding: 7px 24px;
-            text-align: center;
-            display: flex;
-            border: none;
-           margin-top: 10px /* Centers text */;
-            cursor: pointer;
-
-    }
+ 
     
 
     #product1 .pro img {
-        width: 100%;
+        width: 300px;
         height: 350px;
         
         min-height: 250px;
