@@ -20,7 +20,26 @@
                });
                });
                
+               
 
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll("#navbar a");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute("id");
+      const navLink = document.querySelector(`#navbar a[href="#${id}"]`);
+
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove("active"));
+        if (navLink) navLink.classList.add("active");
+      }
+    });
+  }, {
+    threshold: 0.6 // Adjusts how much of the section must be visible
+  });
+
+  sections.forEach(section => observer.observe(section));
 
   const banners = [
     {
@@ -76,7 +95,7 @@
                <a href="#"><img src="logoo-removebg-preview.png" class="logo" alt="logo"></a>
        
                <ul id="navbar">
-                 <li><a class="active" href="index.html">Home</a></li>
+                 <li><a href="index.html">Home</a></li>
                  <li><a href="#banners">Offers</a></li>
                  <li><a href="#about-us">About us</a></li>
                  <li><a href="#product1">Categories</a></li>
